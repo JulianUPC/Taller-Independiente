@@ -1,6 +1,6 @@
 import 'dart:convert'; // Para convertir la respuesta a JSON
 import 'package:http/http.dart' as http;
-import 'package:taller_Independiente/Usuario.dart'; // Importa la clase Usuario
+import 'Usuario.dart'; // Importa la clase Usuario
 
 Future<void> fetchUsers() async {
   final url = 'https://jsonplaceholder.typicode.com/users';
