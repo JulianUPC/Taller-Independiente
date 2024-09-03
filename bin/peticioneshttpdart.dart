@@ -36,18 +36,21 @@ void filtrar_usuario(List<Usuario> usuarios) {
   final contadorusuario = usuarios.where((usuario) => usuario.username.length > 6).toList();
   print('Usuarios de la API con username de mas de 6 caracteres:\n');
   for (var usuario in contadorusuario) {
-    print('ID: ${usuario.id}');
     print('Nombre: ${usuario.name}');
     print('Username: ${usuario.username}');
-    print('Correo: ${usuario.email}');
     print('----------------------');
   }
 }
 
 // Funcion para contar e imprimir usuarios con correo electronico que termina en 'biz'
 void usuariosconbiz(List<Usuario> usuario) {
+  final contadorbiz = usuario.where((Usuario) => Usuario.email.endsWith('biz'));
   final contador = usuario.where((Usuario) => Usuario.email.endsWith('biz')).length;
-  print('Cantidad de usuarios en la API con correo electrónico que termina en "biz": ${contador + 1}');
+  print('Cantidad de usuarios en la API con correo electrónico que termina en "biz": ${contador}\n');
+  for (var usuario in contadorbiz) {
+    print('Email: ${usuario.email}');
+    print('----------------------');
+  }
 }
 
 void main() {
